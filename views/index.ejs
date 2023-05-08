@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Создание ссылки</title>
+  <link rel="stylesheet" href="/src/style.css" type="text/css"/>
+</head>
+<body>
+  <% if (locals.fileLink !== null) { %>
+    <div class="file__message">
+      Ссылка создана: 
+      <a href="<%= locals.fileLink%>"><%=locals.fileLink%></a>
+    </div>
+  <% } %>
+<div class="bubl">
+    <div class="bublcontent">
+      <form action="/upload" class="form" method="post" style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: 0 auto;" enctype="multipart/form-data">
+        <label for="file" class="file__label">Выберите файл</label>
+        <input type="file" style="display: none;" id="file" name="file" required>
+        <!-- <label for="password">Пароль: </label> -->
+        <input type="password" class="input" placeholder="Введите пароль" id="password" name="password">
+        <button class="submit" type="submit">Создать ссылку</button>
+      </form>
+    </div>
+    <div class="bubl1"></div>
+    <div class="bubl2"></div>
+    <div class="bubl3"></div>
+</div>
+</body>
+</html>
